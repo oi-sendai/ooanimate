@@ -1,18 +1,67 @@
 $(document).ready(function() {
 
 
-  $('#contact').validate({
+  // $('#contact').validate({})  
+  //   submitHandler: function(form) {
+  //     console.log('click')
+  //     // form.submit();
+    
+  
 
-    submitHandler: function(form) {
-      $(form).ajaxSubmit({
-        url: 'process.php',
-        success: function() {
-          $('#contact').hide();
-          $('#contact-form').append("<p class='thanks'>Thanks! Your request has been sent.</p>")
-        }
-      })
-    }
-})
+     $('#submit').on('click', function(e){
+      //     console.log('click')
+      // $('#contact').validate({
+
+      //   submitHandler: function(e) {
+      //       console.log('valid')
+      //   // form.submit();
+      //   }
+      // }) 
+        e.preventDefault();//
+    // $('#contact').submit(function(event) {
+
+        console.log('clicks')
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+            'message'              : $('textarea[name=message]').val(),
+            'email'             : $('input[name=email]').val(),
+            'human'    : $('input[name=human]').val()
+        };
+
+        console.log(formData)
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'process.php', // the url where we want to POST
+            data        : formData, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+                        encode          : true
+        })
+            // using the done promise callback
+            .done(function(data) {
+
+                // log data to the console so we can see
+                console.log(data); 
+
+                // here we will handle errors and validation messages
+            });
+        });  
+
+     //    // stop the form from submitting the normal way and refreshing the page
+     //    e.preventDefault();
+     //  })
+    // });
+    // submitHandler: function(form) {
+    //   $(form).ajaxSubmit({
+    //     url: 'process.php',
+    //     success: function() {
+    //       $('#contact').hide();
+    //       $('#contact-form').append("<p class='thanks'>Thanks! Your request has been sent.</p>")
+    //     }
+    //   })
+    // }
+// }});
 
 
 	// function MyClass(arg) {
