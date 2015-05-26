@@ -1004,6 +1004,10 @@ dl:after {
     padding-bottom: 99999px;
     margin-bottom: -99999px;
   }
+  .sidebar img {
+    width: 100%;
+    display: block;
+  }
   .main {
     background: #F3F1F2;
     padding-bottom: 99999px;

@@ -19,6 +19,8 @@
   <!-- <link rel="stylesheet" href="dessol.css"> -->
   <!-- <link rel="stylesheet" href="soil.css"> -->
   <script src="js/vendor/modernizr.min.js"></script>
+  
+  <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.js"></script>
   <!-- // <script src="ocanvas.js"></script> -->
   <!--[if lt IE 9 ]>
     <script src="js/ie.min.js"></script>
@@ -43,7 +45,28 @@
   <section class="container container-full">
     <div class="row">
       <nav class="col-3 sidebar">
-        Menu
+
+      <img src="img/chess.jpg">
+      
+        <h3>This website is a little <a href="http://jamesdunbarphotography.com" alt="James Dunbar Photography">buggy</a> as you can see. That's because I spend my time making awesome things for other people.</h3>
+        <h4>Need a website, or already have a website that needs freshening up? Let's drink tea and talk about happy things</h4>
+      <div id="contact-form">
+        <form id="contact" method="post" action=""> 
+        <label for="email">E-mail</label>
+        <input type="email" class="field" name="email" placeholder="yourname@domain.com" required>
+
+         
+        <label for="message">Question/Comment</label>
+        <textarea name="message" class="field" required></textarea>
+        <label for="human" >2 plus 7  = ?</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+        </div>
+         
+        <input type="submit" name="submit" id="submit" value="Send Message" />
+         
+        </form>
+      </div>
         <div id="belt">
           <article class="part">
           </article>
